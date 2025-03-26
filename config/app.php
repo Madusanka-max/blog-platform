@@ -67,6 +67,50 @@ return [
 
     'timezone' => 'UTC',
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Autoloaded Service Providers
+    |--------------------------------------------------------------------------
+    |
+    | The service providers listed here will be automatically loaded on the
+    | request to your application. Feel free to add your own services to
+    | this array to grant expanded functionality to your applications.
+    |
+    */
+
+    'providers' => [
+        // Laravel Framework Service Providers...
+        Illuminate\Auth\AuthServiceProvider::class,
+        // ... other default providers
+        
+        // Package Service Providers
+        Intervention\Image\ImageServiceProvider::class,
+
+        // Application Service Providers...
+        App\Providers\AppServiceProvider::class,
+        // ... other application providers
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Class Aliases
+    |--------------------------------------------------------------------------
+    |
+    | This array of class aliases will be registered when this application
+    | is started. However, feel free to register as many as you wish as
+    | the aliases are "lazy" loaded so they don't hinder performance.
+    |
+    */
+
+    'aliases' => [
+        'App' => Illuminate\Support\Facades\App::class,
+        // ... other default aliases
+        
+        // Intervention Image Alias
+        'Image' => Intervention\Image\Facades\Image::class,
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -122,5 +166,7 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+
+    
 
 ];
